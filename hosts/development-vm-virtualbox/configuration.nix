@@ -12,7 +12,8 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   virtualbox = {
-    baseImageFreeSpace = 50 * 1024;
+    baseImageFreeSpace = 10 * 1024;
     memorySize = 4096;
   };
+  virtualisation.diskSize = "auto";
 }

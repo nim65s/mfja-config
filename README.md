@@ -6,4 +6,5 @@ This repo contain a set of configurations for VMs, containers and systems used a
 
 ```
 nix build .#nixosConfigurations.development-vm-virtualbox.config.system.build.image
+VirtualBox ./result/*.ova
 ```
