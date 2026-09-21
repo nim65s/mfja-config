@@ -9,6 +9,7 @@
     "${modulesPath}/virtualisation/virtualbox-image.nix"
   ];
 
+  networking.hostName = "development-vm-virtualbox";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   virtualbox = {

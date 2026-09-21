@@ -1,9 +1,12 @@
 {
-  modules,
+  flake,
   ...
 }:
 {
-  imports = [ modules.nixosModules.mfja-common ];
+  imports = [
+    "${flake}/modules/nixos/mfja-common.nix"
+  ];
 
+  networking.hostName = "development";
   nixpkgs.hostPlatform = "x86_64-linux";
 }
