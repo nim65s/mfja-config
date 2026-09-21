@@ -7,38 +7,29 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
-  console.useXkbConfig = true;
-
   users.users = {
-    diane = {
+    admin = {
       isNormalUser = true;
       initialHashedPassword = "$y$j9T$jFAZl.WqlcNAijcNyuWod1$1G.o/eaiMX8s/2s9veDxQETZUKmBdCfdUUmP9wRUjMD";
       extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../users/diane/keys);
-    };
-    guilhem = {
-      isNormalUser = true;
-      initialHashedPassword = "$y$j9T$jFAZl.WqlcNAijcNyuWod1$1G.o/eaiMX8s/2s9veDxQETZUKmBdCfdUUmP9wRUjMD";
-      extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../users/guilhem/keys);
+      openssh.authorizedKeys.keys = lib.splitString "\n" (
+        builtins.readFile ../keys/diane + builtins.readFile ../keys/guilhem
+      );
     };
     user = {
       isNormalUser = true;
-      initialHashedPassword = "user";
+      initialPassword = "user";
     };
   };
   security.sudo.wheelNeedsPassword = false;
 
-  programs = {
-    vim.enable = true;
-    git.enable = true;
-  };
-
   environment.systemPackages = [
     pkgs.gcc
+    pkgs.git
     pkgs.cmake
     pkgs.prek
     pkgs.uv
+    pkgs.vim
   ];
 
   services = {

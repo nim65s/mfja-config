@@ -6,14 +6,9 @@
     systems.url = "github:nix-systems/default/refs/pull/3/merge";
 
     blueprint = {
-      url = "github:numtide/blueprint/refs/pull/161/merge";
+      url = "github:numtide/blueprint";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

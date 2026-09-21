@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    "${flake}/modules/nixos/mfja-common.nix"
+    "${flake}/modules/mfja-common.nix"
   ];
 
   networking.hostName = "development";
