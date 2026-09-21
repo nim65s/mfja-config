@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   ...
 }:
 {
@@ -7,7 +8,6 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
 
   console.useXkbConfig = true;
-  services.xserver.xkb.layout = "fr";
 
   users.users = {
     diane = {
@@ -34,19 +34,34 @@
     git.enable = true;
   };
 
+  environment.systemPackages = [
+    pkgs.gcc
+    pkgs.cmake
+    pkgs.prek
+    pkgs.uv
+  ];
+
   services = {
-    displayManager.autoLogin = {
-      enable = true;
-      user = "user";
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "user";
+      };
+      defaultSession = "xfce";
     };
     openssh.enable = true;
-    xserver.desktopManager.xfce.enable = true;
+    xserver = {
+      enable = true;
+      desktopManager.xfce.enable = true;
+      displayManager.lightdm.enable = true;
+      xkb.layout = "fr";
+    };
   };
-
-  system.stateVersion = "26.05";
 
   system.autoUpgrade = {
     enable = true;
     flake = "github:nim65s/mfja-config";
   };
+
+  system.stateVersion = "26.05";
 }
