@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    "${flake}/modules/mfja-common.nix"
+    "${flake}/modules/nixos/mfja-common.nix"
     "${modulesPath}/virtualisation/virtualbox-image.nix"
   ];
 

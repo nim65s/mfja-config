@@ -1,10 +1,13 @@
 {
   flake,
+  inputs,
   ...
 }:
 {
   imports = [
-    "${flake}/modules/mfja-common.nix"
+    inputs.disko.nixosModules.disko
+    flake.modules.nixos.disko-single-ext4
+    flake.modules.nixos.mfja-common
   ];
 
   networking.hostName = "development";

@@ -1,4 +1,5 @@
 {
+  flake,
   lib,
   pkgs,
   ...
@@ -13,7 +14,7 @@
       initialHashedPassword = "$y$j9T$jFAZl.WqlcNAijcNyuWod1$1G.o/eaiMX8s/2s9veDxQETZUKmBdCfdUUmP9wRUjMD";
       extraGroups = [ "wheel" ];
       openssh.authorizedKeys.keys = lib.splitString "\n" (
-        builtins.readFile ../keys/diane + builtins.readFile ../keys/guilhem
+        builtins.readFile "${flake}/keys/diane" + builtins.readFile "${flake}/keys/guilhem"
       );
     };
     user = {
