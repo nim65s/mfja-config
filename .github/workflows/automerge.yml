@@ -18,7 +18,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Wait for CI
-        run: gh pr checks --watch "$PR_URL"
+        run: gh pr checks --watch --required "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
