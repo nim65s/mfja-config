@@ -26,7 +26,7 @@ jobs:
       - name: Check CI success
         run: |
           gh pr checks --json name,state https://github.com/nim65s/mfja-config/pull/1 | jq -e '
-             (.[] | select(.name == "nix flake check") | .state) == "SUCCESS" and
+             (.[] | select(.name == "ci") | .state) == "SUCCESS" and
              (.[] | select(.name == "pre-commit.ci - pr") | .state) == "SUCCESS"
            '
         env:
