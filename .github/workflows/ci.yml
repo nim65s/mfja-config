@@ -1,4 +1,4 @@
-name: "CI"
+name: "nix flake check"
 on:
   push:
     branches:
