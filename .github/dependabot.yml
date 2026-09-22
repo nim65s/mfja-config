@@ -1,10 +1,13 @@
-updates:
-  - package-ecosystem: "nix"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+version: 2
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-        interval: "monthly"
+updates:
+
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+      interval: "monthly"
+
+- package-ecosystem: "nix"
+  directory: "/"
+  schedule:
+    interval: "weekly"
