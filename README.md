@@ -13,14 +13,15 @@ VirtualBox ./result/*.ova
 
 - boot on nixos iso
 - connect to internet
+- copy-paste this:
 
-```
-sudo nix \
-  --extra-experimental-features nix-command \
-  --extra-experimental-features flakes \
-  run github:nix-community/disko#disko-install \
-   -- \
-   -- --write-efi-boot-entries \
-   --flake github:nim65s/mfja-config#development \
-   --disk main /dev/nvme0n1
-```
+    ```
+    sudo nix \
+      --extra-experimental-features nix-command \
+      --extra-experimental-features flakes \
+      run github:nix-community/disko#disko-install \
+       -- \
+       -- --write-efi-boot-entries \
+       --flake github:nim65s/mfja-config#development \
+       --disk main /dev/nvme0n1
+    ```
