@@ -24,6 +24,14 @@
   };
   security.sudo.wheelNeedsPassword = false;
 
+  programs = {
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
+    btop.enable = true;
+    git.enable = true;
+    vim.enable = true;
+  };
+
   environment.systemPackages = [
     pkgs.gcc
     pkgs.git
@@ -49,6 +57,11 @@
       xkb.layout = "fr";
     };
   };
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.autoUpgrade = {
     enable = true;
