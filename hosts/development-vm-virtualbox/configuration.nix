@@ -14,7 +14,8 @@
 
   virtualbox = {
     baseImageFreeSpace = 10 * 1024;
-    memorySize = 4096;
+    memorySize = 8192;
+    params.cpus = 4;
   };
   virtualisation.diskSize = "auto";
 }
