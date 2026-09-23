@@ -27,12 +27,12 @@
   programs = {
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
-    btop.enable = true;
     git.enable = true;
     vim.enable = true;
   };
 
   environment.systemPackages = [
+    pkgs.btop
     pkgs.gcc
     pkgs.git
     pkgs.cmake
