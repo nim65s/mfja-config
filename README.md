@@ -21,7 +21,7 @@ VirtualBox ./result/*.ova
       --extra-experimental-features flakes \
       run github:nix-community/disko#disko-install \
        -- \
-       -- --write-efi-boot-entries \
+       --write-efi-boot-entries \
        --flake github:nim65s/mfja-config#development \
        --disk main /dev/nvme0n1
     ```
