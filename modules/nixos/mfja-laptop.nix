@@ -18,7 +18,6 @@
 
   environment.systemPackages = [
     pkgs.networkmanagerapplet
-    pkgs.xfce4-appfinder
   ];
 
   networking.networkmanager.enable = true;
