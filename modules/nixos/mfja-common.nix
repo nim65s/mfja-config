@@ -17,6 +17,12 @@
         builtins.readFile "${flake}/keys/diane" + builtins.readFile "${flake}/keys/guilhem"
       );
     };
+    cpene = {
+      isNormalUser = true;
+      initialHashedPassword = "$y$j9T$jFAZl.WqlcNAijcNyuWod1$1G.o/eaiMX8s/2s9veDxQETZUKmBdCfdUUmP9wRUjMD";
+      extraGroups = [ "wheel" ];
+      openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile "${flake}/keys/clement");
+    };
     user = {
       isNormalUser = true;
       initialPassword = "user";
