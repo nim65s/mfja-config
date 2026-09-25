@@ -1,6 +1,7 @@
 # Disko configuration for ext4 on a single disk
 # https://github.com/nix-community/disko-templates/blob/main/single-disk-ext4/disko-config.nix
 {
+  boot.loader.systemd-boot.enable = true;
   disko.devices = {
     disk = {
       main = {
