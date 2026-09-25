@@ -1,6 +1,7 @@
 {
   flake,
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -12,5 +13,9 @@
 
   boot.loader.systemd-boot.enable = true;
 
-  networking.wireless.enable = true;
+  environment.systemPackages = [
+    pkgs.networkmanagerapplet
+  ];
+
+  networking.networkmanager.enable = true;
 }
