@@ -11,11 +11,16 @@
     flake.modules.nixos.mfja-common
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
   environment.systemPackages = [
     pkgs.networkmanagerapplet
   ];
 
   networking.networkmanager.enable = true;
+
+  hardware.cpu.intel.updateMicrocode = true;
 }
