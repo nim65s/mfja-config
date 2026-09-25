@@ -36,6 +36,7 @@
     pkgs.gcc
     pkgs.git
     pkgs.cmake
+    pkgs.firefox
     pkgs.prek
     pkgs.uv
     pkgs.vim

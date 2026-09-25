@@ -1,13 +1,10 @@
 {
   flake,
-  inputs,
   ...
 }:
 {
   imports = [
-    inputs.disko.nixosModules.disko
-    flake.modules.nixos.disko-single-ext4
-    flake.modules.nixos.mfja-common
+    flake.modules.nixos.mfja-laptop
   ];
 
   networking.hostName = "development";
