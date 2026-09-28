@@ -6,6 +6,10 @@
   ...
 }:
 {
+  imports = [
+    flake.modules.nixos.insa-ros2-env
+  ];
+
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
