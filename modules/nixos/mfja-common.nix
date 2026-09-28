@@ -1,6 +1,7 @@
 {
   flake,
   lib,
+  perSystem,
   pkgs,
   ...
 }:
@@ -38,6 +39,7 @@
   };
 
   environment.systemPackages = [
+    perSystem.self.vscode
     pkgs.btop
     pkgs.gcc
     pkgs.git
