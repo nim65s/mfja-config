@@ -8,6 +8,7 @@
 {
   imports = [
     flake.modules.nixos.insa-ros2-env
+    flake.modules.nixos.ros
   ];
 
   time.timeZone = "Europe/Paris";
